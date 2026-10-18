@@ -1,0 +1,31 @@
+{%	load static	%}
+<html>
+	<head>
+		<title>
+			Vowel Consonant Counter App by Kamal Sir
+		</title>
+		<link rel="stylesheet"		href="{%	static	 'css/mystyle.css'	%}"/>
+		<script	src="{% static 'js/myjs.js'	%}"></script>
+	</head>
+	<body>
+		<h1>Vowel Consonant Counter App</h1>
+		<br/>
+		<form method="POST" onsubmit="return check(event)">
+		{%	csrf_token	%}
+		<textarea
+			name="txt"
+			placeholder="Enter Text"
+			rows=5
+			cols=40
+			id="id_txt"
+		>{{txt}}</textarea>
+		<br/><br/>
+		<input type="submit"
+				value="Count"
+		/>
+		</form>
+		<h2 id="id_msg">
+				{{msg}}
+		</h2>
+	</body>
+</html>
